@@ -38,9 +38,7 @@ These instructions, while covering generally expected environments, will not cov
 
     1. Clone PaperMC `git clone https://github.com/PaperMC/Paper && cd Paper`
 
-    2. Revert it to the latest 1.16.1 commit `git reset --hard 627f4b8561115d40d6a39587d1ad94b0104f7e14`
-
-    3. Build Paper to install it in your local Maven cache and make it available as dependency `./paper jar`
+    2. Build Paper to install it in your local Maven cache and make it available as dependency `./paper jar`
 
 
 At this point you should be able to import plugins into your IDE and compile them by invoking `mvn` in their respective folder. Further instructions are only needed if you also desire a test server to test your changes on. Alternatively to this manual setup, see also our [Ansible deployment environment](https://github.com/civclassic/ansiblesetup) which automates setting up a full copy of Civclassic production.
