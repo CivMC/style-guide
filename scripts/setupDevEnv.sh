@@ -48,13 +48,9 @@ cd $targetFolder
 
 #Install Paper 1.16.4
 if $installPaper ; then
-	git init paper
-	cd paper
-	git config core.autocrlf false
-	git remote add origin https://github.com/PaperMC/Paper.git
-	git fetch --all
-	git reset --hard aaff430b6e1f71c875532df01b099228f7de40b7
-	./paper jar
+	git clone https://github.com/Protonull/PaperBuilder
+	(cd PaperBuilder || exit;
+		bash installer.bash --rev 1.16.5)
 fi
 
 for civPlugin in $civPlugins ; do
