@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-#Updates an existing setup generated using the setupDevEnv.sh script to install the latest official versions of all plugins in your local Maven repo
+# Updates an existing setup generated using the setupDevEnv.sh script to install the latest official versions of all plugins in your local Maven repo
 
-#Change these variables as needed
+# Change these variables as needed
 
-#Directory we are basing in, defaulting to the current one
+# Directory we are basing in, defaulting to the current one
 currentDir=$(pwd)
 
-#Name of the folder all plugins are in relative to the base folder
+# Name of the folder all plugins are in relative to the base folder
 folderName='civ'
 
 
-#Don't touch anything beyond this point unless you REALLY know what you're doing -------------------------------------------------------------
+# Don't touch anything beyond this point unless you REALLY know what you're doing -------------------------------------------------------------
 pathSep="/"
 targetFolder=$currentDir$pathSep$folderName
 orgName="CivClassic"
@@ -36,7 +36,7 @@ for civPlugin in $civPlugins ; do
 		continue
 	fi
 	cd $currPluginPath
-	git stash -a #Stash any eventual local work
+	git stash -a # Stash any eventual local work
 	git fetch $orgName
 	git checkout $masterBranchRef
 	mvn clean package install
